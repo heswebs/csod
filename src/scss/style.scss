@@ -1,0 +1,487 @@
+
+/**Base layout setup with Mobile first**/
+$bg-color: #F7F7F7;
+$lightBlue:#00AFE0;
+$hColorWhite:#ECECEC;
+$gray:#919191;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size:16px;
+}
+
+nav{
+  margin-bottom:50px;
+
+  ul {
+    list-style-type:circle;
+    color:$lightBlue;
+    font-size:1em;
+
+    a{
+      text-decoration:none;
+    }
+  }
+}
+
+#main-container{
+  width:100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction:column;
+  align-items:center;
+}
+
+section {
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:10px 0;
+
+}
+
+#main-search form, input {
+  background-image: url("/images/seach.png");
+  background-size:35px 35px;
+  background-repeat:no-repeat;
+  background-position: 25px 25px;
+  width:100%;
+  height:80px;
+  background-color:$lightBlue;
+  border:none;
+  font-size:1.3em;
+  &:focus {
+    background-image:none;
+    color:$hColorWhite;
+    text-indent:30px;
+  }
+  &::placeholder{
+  color:$hColorWhite;
+  font-weight:300;
+  padding-left:90px;
+  }
+}
+
+section.imageFeed{
+    text-align:center;
+    padding:15px;
+    margin:80px auto;
+    h2{
+      margin:20px;
+      color:$lightBlue;
+      font-size:2em;
+    }
+
+    h3 {
+      font-size:1.5em;
+
+    }
+
+
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 479px) {
+
+  section.banner-container {
+      background-image:url("/images/banner-background.jpg");
+
+      text-align:center;
+    
+      div.theO {
+          width: 40px;
+          display: inline-block;
+            }
+
+      h1 {
+        font-size:2.5em;
+        color:$hColorWhite;
+        margin:15px auto;
+
+      }
+
+      p {
+        color:$lightBlue;
+        font-size:0.8em;
+        width:60%;
+        margin:15px auto;
+      }
+
+      figure {
+        h3 {
+        color:$hColorWhite;
+        margin-bottom:15px;
+
+        }
+        h1, span {
+          color:$lightBlue;
+
+        }
+      }
+
+      figure.banner-person-2 {
+        .quotHideMobile {
+          display:none;
+        }
+      }
+
+      img {
+        margin-bottom:15px;
+      }
+
+
+  }
+
+  section.best-place-banner {
+
+    text-align:center;
+    img {
+      margin:10px auto;
+    }
+
+    figcaption {
+      margin-bottom:15px;
+      color:$gray;
+      font-size:0.8em;
+    }
+  }
+
+  section.the-culture {
+    text-align:center;
+
+      h3{
+        color:black; 
+        margin:20px 0;
+      }
+
+      h2 {
+        color:$lightBlue;
+
+      }
+
+      p {
+        letter-spacing:0.07em;
+        padding:15px;
+        text-align:left;
+      }
+
+      nav{
+        display:none;
+      }
+
+        aside {
+    img {
+      width:100%;
+    }
+  }
+  }
+
+
+ 
+
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 480px) and (max-width: 959px) {
+
+  
+  section.banner-container {
+
+      background-image:url("/images/banner-background.jpg");
+
+      text-align:center;
+      
+      div.theO {
+          width: 50px;
+          display: inline-block;
+            }
+
+      h1 {
+        font-size:4em;
+        color:$hColorWhite;
+        margin-top:50px;
+      }
+
+      p {
+        color:$lightBlue;
+        font-size:0.8em;
+        width:60%;
+        margin:30px auto 50px;
+      }
+
+      figure {
+        h3 {
+        color:$hColorWhite;
+        margin-bottom:10px;
+        font-size:0.9em;
+        font-weight:normal;
+        padding:0 10px;
+
+        }
+        span {
+          font-size:0.8em;
+        }
+        h1, span {
+          color:$lightBlue;
+          margin-top:0;
+        }
+
+      }
+
+
+      img {
+        margin:15px auto;
+      }
+
+      .banner-people {
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:center;
+
+
+        figure {
+          flex-basis:30%;
+
+          img {
+            width:100%;
+          }
+        }
+
+          figure.banner-person-2 {
+            display:flex;
+            flex-direction:column-reverse;
+
+             .quotForMobile {
+              display:none;
+             }
+
+
+
+          }
+      }
+  }
+
+  section.best-place-banner {
+    flex-direction:row;
+    justify-content:space-around;
+
+    text-align:center;
+    img {
+      width:207px;
+      height:48px;
+      margin:30px auto 10px;
+    }
+
+    figcaption {
+      margin-bottom:15px;
+      color:$gray;
+      font-size:0.8em;
+    }
+  }
+
+  section.the-culture {
+    flex-direction:row;
+    padding:50px 0 0 50px;
+
+    article { 
+      flex-basis: 45%;
+
+      h3{
+        color:black; 
+        margin:20px 0;
+        padding-left: 15px;
+      }
+
+      h2 {
+        color:$lightBlue;
+        padding-left: 15px;
+
+      }
+
+      p {
+        letter-spacing:0.07em;
+        padding:15px;
+        text-align:left;
+      }
+    }
+
+  }
+
+  aside {
+    flex-basis:49%;
+    margin-left:6%;
+    img {
+      width:100%;
+    }
+    .img-group {
+      display:flex;
+      justify-content:flex-start;
+
+      img{
+        flex:0 1 49%;
+        width:50%;
+        height:50%;
+      }
+    }
+  }
+ 
+
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 960px) {
+
+  section.banner-container {
+
+      background-image:url("/images/banner-background.jpg");
+
+      text-align:center;
+
+      div.theO {
+          width: 90px;
+          display: inline-block;
+            }
+
+      h1 {
+        font-size:7em;
+        color:$hColorWhite;
+        margin-top:100px;
+        width:100%;
+      }
+
+      p {
+        color:$lightBlue;
+        font-size:0.9em;
+        width:60%;
+        margin:50px auto 100px;
+      }
+
+      figure {
+        h3 {
+        color:$hColorWhite;
+        margin-bottom:10px;
+        font-size:2em;
+        font-weight:normal;
+        padding:0 10px;
+
+        }
+        span {
+          font-size:1em;
+        }
+        h1, span {
+          color:$lightBlue;
+          margin-top:0;
+        }
+
+      }
+
+
+      img {
+        margin:15px auto;
+      }
+
+      .banner-people {
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:center;
+
+
+        figure {
+          flex-basis:30%;
+
+          img {
+            width:100%;
+          }
+        }
+
+          figure.banner-person-2 {
+            display:flex;
+            flex-direction:column-reverse;
+
+             .quotForMobile {
+              display:none;
+             }
+
+
+
+          }
+      }
+  }
+
+  section.best-place-banner {
+    flex-direction:row;
+    justify-content:space-around;
+
+    text-align:center;
+    img {
+      width:207px;
+      height:48px;
+      margin:80px auto 20px;
+    }
+
+    figcaption {
+      margin-bottom:60px;
+      color:$gray;
+      font-size:0.8em;
+    }
+  }
+
+  section.the-culture {
+    flex-direction:row;
+    align-items:flex-start;
+    padding:50px 0 0 50px;
+
+    article { 
+      flex-basis: 45%;
+      font-size:1.5em;
+
+
+
+      h3{
+        color:black; 
+        margin:20px 0;
+        padding-left: 15px;
+      }
+
+      h2 {
+        color:$lightBlue;
+        padding-left: 15px;
+
+      }
+
+      p {
+        letter-spacing:0.07em;
+        padding:15px;
+        text-align:left;
+      }
+    }
+
+  }
+
+  aside {
+    flex-basis:49%;
+    margin-left:6%;
+    img {
+      width:100%;
+    }
+    .img-group {
+      display:flex;
+      justify-content:flex-start;
+
+      img{
+        flex:0 1 49%;
+        width:50%;
+        height:50%;
+      }
+    }
+  }
+ 
+}
